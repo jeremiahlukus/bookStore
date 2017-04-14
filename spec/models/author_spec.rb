@@ -20,7 +20,6 @@ RSpec.describe Author, :type => :model do
   describe "#full_name" do
     it "return the full name of the author" do
       author = Fabricate(:author, first_name: "John", last_name: "Doe")
-
       expect(author.full_name).to eq("John Doe")
 
     end
