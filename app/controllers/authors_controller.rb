@@ -4,10 +4,10 @@ class AuthorsController < ApplicationController
   end
 
   def show
-#    require 'pry';binding.pry
+    #    require 'pry';binding.pry
     @author = Author.find(params[:id])
   end
-  
+
 
   def new
     @author = Author.new
@@ -16,14 +16,14 @@ class AuthorsController < ApplicationController
 
   def create 
     @author = Author.new(author_params)
-   if  @author.save
-    flash[:success] = "Author has been created"
-    redirect_to @author
-   else
+    if  @author.save
+      flash[:success] = "Author has been created"
+      redirect_to @author
+    else
 
-    flash[:danger] = "Author has not been created"
-    render :new
-   end
+      flash[:danger] = "Author has not been created"
+      render :new
+    end
 
   end
 
@@ -35,8 +35,11 @@ class AuthorsController < ApplicationController
   def update 
     @author = Author.find(params[:id]) 
     if @author.update(author_params)
-    flash[:success] = "Author has been updated"
-    redirect_to @author
+      flash[:success] = "Author has been updated"
+      redirect_to @author
+    else
+      flash[:danger] = "Author has not been updated"
+      render :edit
     end
   end
 
