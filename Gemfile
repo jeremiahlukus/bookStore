@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
-gem 'bootstrap_form'
+gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
 
 
 group :development, :test do
