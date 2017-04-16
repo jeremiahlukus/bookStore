@@ -16,11 +16,16 @@ class AuthorsController < ApplicationController
 
   def create 
     @author = Author.new(author_params)
-    @author.save
+   if  @author.save
     flash[:success] = "Author has been created"
     redirect_to @author
-  end
+   else
 
+    flash[:danger] = "Author has not been created"
+    render :new
+   end
+
+  end
 
   private 
   def author_params
