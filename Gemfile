@@ -30,7 +30,7 @@ group :test do
   gem 'capybara'
   gem 'fabrication'
   gem 'faker'
-
+  gem 'shoulda-matchers', require: false
 end
 
 
